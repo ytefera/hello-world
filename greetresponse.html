@@ -1,14 +1,112 @@
 <!HTML DOCTYPE>
 <html>
 <head>
-<title>myMixtape | Results</title>
+<style>
+
+	body {background-color: powderblue; font-family: Georgia, "Times New Roman", Times, serif;}
+	h2{color: green;  text-align: center}
+	h1{text-align: center}
+	table {border-collapse: collapse; border: 1px solid black; background: rgba(255,255,255,.1)
+	padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;border-style: groove;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;}
+	tr{border: 1px solid black}
+	td {height: 50px; vertical-align: center ;text-align: center; horizontal-align:center; align-content: center}
+
+</style>
+<title>{{title}}</title>
 </head>
 <body>
-<h1>myMixtape Results</h1>
-<br>
+<h1>{{title}}</h1>
+<h2>The following songs have been suggested for your playlist:</h2>
 
 <div>
-	<h3>The following songs have been suggested for your playlist:</h3>
+
+	<table style="width:100%">
+		<tr>
+			<<td><b> Song Number </b></td>
+			<td><b> Artist Name</b></td>
+			<td><b> Song Name</b></td>
+		</tr>
+
+		<tr>
+			<td> Song 1 </td>
+			<td> {{artist1}}</td>
+			<td> {{track1}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 2 </td>
+			<td> {{artist2}}</td>
+			<td> {{track2}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 3 </td>
+			<td> {{artist3}}</td>
+			<td> {{track3}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 4 </td>
+			<td> {{artist4}}</td>
+			<td> {{track4}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 5 </td>
+			<td> {{artist5}}</td>
+			<td> {{track5}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 6 </td>
+			<td> {{artist6}}</td>
+			<td> {{track6}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 7</td>
+			<td> {{artist7}}</td>
+			<td> {{track7}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 8</td>
+			<td> {{artist8}}</td>
+			<td> {{track8}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 9</td>
+			<td> {{artist9}}</td>
+			<td> {{track9}}</td>
+		</tr>
+
+		<tr>
+			<td> Song 10</td>
+			<td> {{artist10}}</td>
+			<td> {{track10}}</td>
+		</tr>
+
+	</table>
 
 
 </div>

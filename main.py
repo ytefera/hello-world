@@ -17,8 +17,7 @@ JINJA_ENVIRONMENT = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.di
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         logging.info("In MainHandler")
-        #vals={}
-        template_values = {}
+        template_values={}
         template_values['page_title'] = "myMixtape | Survey"
         template = JINJA_ENVIRONMENT.get_template('greetform.html')
         self.response.write(template.render(template_values))
@@ -97,32 +96,60 @@ class GreetResponseHandlr(webapp2.RequestHandler):
         sclient = spotiClient()
 
         # sets vaiables to input
-        limit = self.request.get('limit', 3)
+        limit = 10
 
         seed_genre = self.request.get('seed_genre')
         seed_danceability = self.request.get('seed_danceability')
         popularity = self.request.get('popularity')
 
-        vals['page_title'] = "myMixtape | Survey"
+        title = "myMixtape | Results"
 
 
         #searches for an artist ID to search in endpoint
         artist = self.request.get('seed_artist')
         artistID = sclient.apiRequest(endpoint="search", params={"q": artist, "type": "artist"})
-        seed_artists = seed_artistID["artists"]["items"][0]["id"]
+        seed_artists = artistID["artists"]["items"][0]["id"]
 
         # searches for track ID to search in endpoint
         track = self.request.get('seed_track')
         trackID = sclient.apiRequest(endpoint="search", params={"q": track, "type": "track"})
-        seed_tracks = seed_trackID["tracks"]["items"][0]["id"]
+        seed_tracks = trackID["tracks"]["items"][0]["id"]
 
-        vals = {"limit": limit,"seed_genres": seed_genre,"target_danceability": target_danceability,
-                 "target_popularity": popularity}
+        vals = {"seed_tracks": seed_tracks, "seed_artists": seed_artists, "title": title, "limit": limit,"seed_genres": seed_genre, "seed_danceability": seed_danceability, "target_popularity": popularity}
 
-        searchresult = sclient.apiRequest(params=vals)
+        recommendation = sclient.apiRequest(params = vals)
 
-        vals['artistPlaylist'] = searchresult["tracks"][0]["artists"][0]['name']
-        vals['trackPlaylist'] = searchresult["tracks"][0]['name']
+        # bad code to get all 10 songs, but for loops were not working well for me
+        vals['artist1'] = recommendation["tracks"][0]["artists"][0]['name']
+        vals['track1'] = recommendation["tracks"][0]['name']
+
+        vals['artist2'] = recommendation["tracks"][0]["artists"][0]['name']
+        vals['track2'] = recommendation["tracks"][1]['name']
+
+        vals['artist3'] = recommendation["tracks"][2]["artists"][0]['name']
+        vals['track3'] = recommendation["tracks"][2]['name']
+
+        vals['artist4'] = recommendation["tracks"][3]["artists"][0]['name']
+        vals['track4'] = recommendation["tracks"][3]['name']
+
+        vals['artist5'] = recommendation["tracks"][4]["artists"][0]['name']
+        vals['track5'] = recommendation["tracks"][4]['name']
+
+        vals['artist6'] = recommendation["tracks"][5]["artists"][0]['name']
+        vals['track6'] = recommendation["tracks"][5]['name']
+
+        vals['artist7'] = recommendation["tracks"][6]["artists"][0]['name']
+        vals['track7'] = recommendation["tracks"][6]['name']
+
+        vals['artist8'] = recommendation["tracks"][7]["artists"][0]['name']
+        vals['track8'] = recommendation["tracks"][7]['name']
+
+        vals['artist9'] = recommendation["tracks"][8]["artists"][0]['name']
+        vals['track9'] = recommendation["tracks"][8]['name']
+
+        vals['artist10'] = recommendation["tracks"][9]["artists"][0]['name']
+        vals['track10'] = recommendation["tracks"][9]['name']
+
 
         template = JINJA_ENVIRONMENT.get_template('greetresponse.html')
         self.response.write(template.render(vals))

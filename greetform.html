@@ -2,34 +2,79 @@
 <html>
 <head>
 <title>myMixtape | Survey</title>
+<style>
+body {background-color: powderblue; font-family: Georgia, "Times New Roman", Times, serif;}
+h1 {text-align:center}
+label{
+display:inline-block;
+width:200px;
+margin-right:30px;
+text-align:center;
+}
+
+h2   {color: green;text-align:center}
+form {
+	padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+	border-style: groove;
+}
+.form-style-5 input[type="submit"]:hover,
+.form-style-5 input[type="button"]:hover
+{
+    background: #109177;
+}
+
+</style>
 </head>
 <body>
-<h2>myMixtape is a tool to create the perfect playlist.</h2>
-<p>fill out the survey below and a custom playlist will be generated based on your results.</p>
-<br>
-<h2>carefully answer the questions below:</h2>
+<h1>myMixtape</h1>
+<h2>myMixtape is a tool to create the perfect playlist of 10 songs.</h2>
+
+
 
 <form action="gresponse" method="post">
-	<label for="limit">How many songs?</label>
-	<input type="text" id="limit" name="limit"/>
+	<center><b><p>Answer every question below and a custom playlist will be generated based on your results.</p></b></center>
 
-	<br>
-	<label for="seed_genre">What Genre are you looking for?</label>
+	<b><p>What Genre are you looking for?</p></b>
+	<p>Genres Available: blues, classical, country, dance, electro, hip hop, house, pop</p>
+	<label for="seed_genre">Genre:</label>
 	<input type="text" id="seed_genre" name="seed_genre"/>
 
-	<br>
-	<label for="seed_artist">What is a song to inspire the playlist? Artist:</label>
+	<br><br>
+	<b><p>What is a song to inspire the playlist?</p></b>
+	<label for="seed_artist"> Artist:</label>
 	<input type="text" id="seed_artist" name="seed_artist"/>
 
 	<label for="seed_track">Song Name:</label>
 	<input type="text" id="seed_track" name="seed_track"/>
 
-	<br>
-	<label for="seed_danceability">On a scale of 1 to 10. How dance-able do you want the playlist?</label>
+	<br><br>
+	<b><p>How dance-able do you want the playlist? </p></b>
+	<p>Please use a scale of 0.0 to 1. A medium dance-able song would be 0.5</p>
+	<label for="seed_danceability">Dance-ability:</label>
 	<input type="text" id="seed_danceability" name="seed_danceability"/>
 
-	<br>
-	<label for="popularity">On a scale of 1 to 100. How popular should the songs be?</label>
+	<br><br>
+	<b><p>On a scale of 1 to 100. How popular should the songs be?</p></b>
+	<p>Please use a scale of 1 to 100. A medium popular song would be 50</p>
+	<label for="popularity">Popularity:</label>
 	<input type="text" id="popularity" name="popularity"/>
 
 	<br><br>
