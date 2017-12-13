@@ -1,0 +1,39 @@
+<!HTML DOCTYPE>
+<html>
+<head>
+<title>myMixtape | Survey</title>
+</head>
+<body>
+<h2>myMixtape is a tool to create the perfect playlist.</h2>
+<p>fill out the survey below and a custom playlist will be generated based on your results.</p>
+<br>
+<h2>carefully answer the questions below:</h2>
+
+<form action="gresponse" method="post">
+	<label for="limit">How many songs?</label>
+	<input type="text" id="limit" name="limit"/>
+
+	<br>
+	<label for="seed_genre">What Genre are you looking for?</label>
+	<input type="text" id="seed_genre" name="seed_genre"/>
+
+	<br>
+	<label for="seed_artist">What is a song to inspire the playlist? Artist:</label>
+	<input type="text" id="seed_artist" name="seed_artist"/>
+
+	<label for="seed_track">Song Name:</label>
+	<input type="text" id="seed_track" name="seed_track"/>
+
+	<br>
+	<label for="seed_danceability">On a scale of 1 to 10. How dance-able do you want the playlist?</label>
+	<input type="text" id="seed_danceability" name="seed_danceability"/>
+
+	<br>
+	<label for="popularity">On a scale of 1 to 100. How popular should the songs be?</label>
+	<input type="text" id="popularity" name="popularity"/>
+
+	<br><br>
+	<input type="submit" value="Go" name="gobtn"/></form>
+
+</body>
+</html>
